@@ -1,0 +1,43 @@
+Following is the approach followed for the kaggle competition by me.
+
+1. **Package Importing**: 
+   - I imported essential libraries such as NumPy and Pandas to facilitate data manipulation and processing.
+   - NumPy helped handle numerical data efficiently, while Pandas was instrumental in working with structured data through DataFrames.
+
+2. **Data Exploration**:
+   - I traversed through the Kaggle input directory using `os.walk()` to locate relevant files.
+   - By printing out the file paths, I gained an understanding of the dataset's structure.
+   - Subsequently, I loaded the data from the CSV file (`train.csv`) into a Pandas DataFrame for further analysis.
+
+3. **Feature Engineering**:
+   - I calculated the Weighted Average Price (WAP) using the provided formula, leveraging the data from the order book.
+   - Additionally, I defined the target variable based on the difference between future WAP values of individual stocks
+    and a synthetic index composed of NASDAQ-listed stocks.
+   - Columns like `date_id` and `seconds_in_bucket` were interpreted, representing days and timestamps, respectively.
+
+4. **Data Visualization**:
+   - Utilizing libraries such as Matplotlib, Seaborn, and Plotly, I visualized various aspects of the dataset.
+   - Plotting the target variable over time for each stock provided insights into price movements.
+   - Visualizations of bid and ask prices, as well as near, far, and reference prices, aided in understanding 
+   stock behavior on specific days.
+   - I also examined imbalance and matched sizes to gain further understanding of trading dynamics.
+
+5. **Model Preparation**:
+   - To prepare the data for modeling, I defined a function `feature_cols()` to select relevant feature columns.
+   - Handling missing values ensured the integrity of the dataset.
+   - Splitting the data into features (`x_train`) and the target variable (`y_train`), followed by further 
+   division into training and testing sets using `train_test_split()`, facilitated model training.
+
+6. **Model Training**:
+   - I instantiated a LightGBM (LGBM) regressor model with specified parameters, aiming to predict closing price movements.
+   - Employing a pipeline approach, I streamlined feature selection and model fitting to enhance efficiency.
+   - The model was trained using the training data, incorporating the LightGBM regressor within the pipeline.
+
+7. **Model Validation**:
+   - Leveraging the trained model, I made predictions on the testing data (`x_test`).
+   - Mean Absolute Error (MAE) served as the evaluation metric, quantifying the average absolute difference 
+   between predicted and actual target values.
+   - This evaluation provided insights into the model's accuracy and performance.
+
+Through these steps, I conducted a systematic analysis and modeling approach for the Optiver Trading at 
+the Close project, aiming to predict stock price movements effectively.
