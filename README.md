@@ -48,3 +48,7 @@ For a deeper understanding of stock market operations, I recommend exploring the
 - [Stock Market Prediction via Deep Learning Techniques](https://arxiv.org/abs/2212.12717)
 - [Stock Market Analysis: A Review and Taxonomy of Prediction Techniques](https://www.mdpi.com/2227-7072/7/2/26)
 
+###Author
+Kairvee vaswani 
+vkairvee@gmail.com
+
